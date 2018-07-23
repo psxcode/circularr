@@ -1,6 +1,9 @@
 ## Circularr
 Circular fixed size array
 
+### Install
+`npm i circularr`
+
 ### Usage
 ```js
 import Circularr from 'circularr'
