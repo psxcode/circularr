@@ -13,6 +13,7 @@
     "access": "public"
   },
   "author": "psxcode <psxcode@gmail.com> (https://github.com/psxcode)",
+  "homepage": "https://github.com/psxcode/circularr",
   "license": "MIT",
   "private": false,
   "scripts": {
