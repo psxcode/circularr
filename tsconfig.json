@@ -11,7 +11,7 @@
     "alwaysStrict": true,
     "declaration": true,
     "strictNullChecks": true,
-    "sourceMap": true
+    "sourceMap": false
   },
   "include": [
     "src"
