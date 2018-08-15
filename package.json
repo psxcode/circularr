@@ -1,8 +1,12 @@
 {
   "name": "circularr",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Circular fixed size array",
-  "keywords": ["circular", "fixed", "array"],
+  "keywords": [
+    "circular",
+    "fixed",
+    "array"
+  ],
   "main": "build/index",
   "module": "build/index",
   "typings": "build/index.d.ts",
