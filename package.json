@@ -17,7 +17,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "build": "yarn clean && yarn tsc",
+    "build": "yarn clean && yarn tsc -p tsconfig.build.json",
     "clean": "rimraf dist",
     "test": "nyc yarn mocha --opts mocha.opts",
     "test:watch": "yarn mocha --opts mocha.opts --watch"
