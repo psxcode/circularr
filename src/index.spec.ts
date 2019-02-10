@@ -19,6 +19,15 @@ describe('[ Circularr ]', () => {
     expect(Array.from(arr)).deep.eq([42, 42, 42])
   })
 
+  it('[ clear ]', () => {
+    const arr = new Circularr<number>(3)
+    expect(Array.from(arr)).deep.eq([undefined, undefined, undefined])
+    arr.fill(42)
+    expect(Array.from(arr)).deep.eq([42, 42, 42])
+    arr.clear()
+    expect(Array.from(arr)).deep.eq([undefined, undefined, undefined])
+  })
+
   it('[ shift ]', () => {
     const arr = new Circularr(3).fill(0)
     const res0 = arr.shift(42)

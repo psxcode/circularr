@@ -32,6 +32,12 @@ class Circularr <T> {
     return this
   }
 
+  clear (): this {
+    this.data = new Array<T>(this.data.length)
+    this.index = 0
+    return this
+  }
+
   shift (value: T): T {
     const returnValue = this.data[this.index]
     this.data[this.index] = value
