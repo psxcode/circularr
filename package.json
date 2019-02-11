@@ -7,9 +7,9 @@
     "fixed",
     "array"
   ],
-  "main": "build/index",
-  "module": "build/index",
-  "typings": "build/index.d.ts",
+  "main": "index",
+  "module": "index",
+  "typings": "index.d.ts",
   "files": [
     "build"
   ],
