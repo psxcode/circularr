@@ -1,5 +1,5 @@
 import { expect } from 'chai'
-import Circularr from './index'
+import Circularr from '../src/index'
 
 describe('[ Circularr ]', () => {
   it('[ from ]', () => {

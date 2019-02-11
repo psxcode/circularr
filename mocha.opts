@@ -1,7 +1,0 @@
---ui bdd
---recursive
---require esm
---require tshook.js
---require source-map-support/register
---watch-extensions ts
-src/**/*.spec.ts

@@ -1,9 +1,10 @@
-class Circularr <T> {
+export default class Circularr <T> {
   data: T[]
-  index = 0
+  index: number
 
   constructor (length: number) {
     this.data = new Array<T>(length)
+    this.index = 0
   }
 
   static from <T> (source: T[]): Circularr<T> {
@@ -11,6 +12,7 @@ class Circularr <T> {
     for (let i = 0; i < source.length; ++i) {
       c.data[i] = source[i]
     }
+
     return c
   }
 
@@ -29,12 +31,14 @@ class Circularr <T> {
       this.data[i] = value
     }
     this.index = 0
+
     return this
   }
 
   clear (): this {
     this.data = new Array<T>(this.data.length)
     this.index = 0
+
     return this
   }
 
@@ -42,6 +46,7 @@ class Circularr <T> {
     const returnValue = this.data[this.index]
     this.data[this.index] = value
     this.index = (this.index + 1) % this.data.length
+
     return returnValue
   }
 
@@ -49,8 +54,7 @@ class Circularr <T> {
     this.index = (this.index + this.data.length - 1) % this.data.length
     const returnValue = this.data[this.index]
     this.data[this.index] = value
+
     return returnValue
   }
 }
-
-export default Circularr
