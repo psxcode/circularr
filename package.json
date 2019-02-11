@@ -10,9 +10,6 @@
   "main": "index",
   "module": "index",
   "typings": "index.d.ts",
-  "files": [
-    "build"
-  ],
   "publishConfig": {
     "access": "public"
   },
