@@ -57,4 +57,30 @@ export default class Circularr <T> {
 
     return returnValue
   }
+
+  slice (beginIndex?: number, endIndex?: number): Circularr<T> {
+    return Circularr.from([...this].slice(beginIndex, endIndex))
+  }
+
+  trim (): Circularr<T> {
+    const data = [...this]
+    let beginIndex = 0
+    let endIndex = data.length
+
+    for (let i = 0; i < data.length; ++i) {
+      if (data[i] !== undefined) {
+        break
+      }
+      ++beginIndex
+    }
+
+    for (let i = data.length - 1; i >= 0; --i) {
+      if (data[i] !== undefined) {
+        break
+      }
+      --endIndex
+    }
+
+    return Circularr.from(data.slice(beginIndex, endIndex))
+  }
 }
