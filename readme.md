@@ -88,6 +88,39 @@ array.shift(2)
 const trimmed = array.trim() // [1, 2]
 ```
 
+### At
+`at(index: number): T | undefined`
+
+`at` returns element at the index. For negative indices - `undefined` is returned. For overflow indices - `undefined` is returned
+```js
+const array = new Circularr<number>(5)
+
+array.shift(1)
+array.shift(2)
+
+const val0 = array.at(0) // undefined
+const val1 = array.at(3) // 1
+const val2 = array.at(4) // 2
+const val3 = array.at(5) // undefined
+```
+
+### WrapAt
+`wrapAt(index: number): T | undefined`
+
+`wrapAt` returns element at the index. For negative and overflow indices - the index will be wrapped around, and correct value will be returned
+```js
+const array = new Circularr<number>(5)
+
+array.shift(1)
+array.shift(2)
+
+const val0 = array.at(0) // undefined
+const val1 = array.at(3) // 1
+const val2 = array.at(4) // 2
+const val3 = array.at(8) // 1
+const val3 = array.at(9) // 2
+```
+
 ### Iterable
 `Circularr` implements `iterable` protocol, so it can be used with any standard iterable syntax
 ```js
