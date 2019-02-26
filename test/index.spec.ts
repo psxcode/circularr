@@ -251,4 +251,69 @@ describe('[ Circularr ]', () => {
       expect(Array.from(res)).deep.eq([0, 0, 0])
     })
   })
+
+  describe('[ at ]', () => {
+    it('should work', () => {
+      const arr = new Circularr<number>(4)
+      arr.shift(3)
+      arr.shift(4)
+
+      expect(arr.at(0)).eq(undefined)
+      expect(arr.at(1)).eq(undefined)
+      expect(arr.at(2)).eq(3)
+      expect(arr.at(3)).eq(4)
+    })
+
+    it('should work with negative index', () => {
+      const arr = new Circularr<number>(4)
+      arr.shift(3)
+      arr.shift(4)
+
+      expect(arr.at(-2)).eq(undefined)
+    })
+
+    it('should work with overflow index', () => {
+      const arr = new Circularr<number>(4)
+      arr.shift(3)
+      arr.shift(4)
+
+      expect(arr.at(10)).eq(undefined)
+    })
+  })
+
+  describe('[ wrapAt ]', () => {
+    it('should work', () => {
+      const arr = new Circularr<number>(4)
+      arr.shift(3)
+      arr.shift(4)
+
+      expect(arr.wrapAt(0)).eq(undefined)
+      expect(arr.wrapAt(1)).eq(undefined)
+      expect(arr.wrapAt(2)).eq(3)
+      expect(arr.wrapAt(3)).eq(4)
+    })
+
+    it('should work with negative index', () => {
+      const arr = new Circularr<number>(4)
+      arr.shift(3)
+      arr.shift(4)
+
+      expect(arr.wrapAt(-1)).eq(4)
+      expect(arr.wrapAt(-2)).eq(3)
+      expect(arr.wrapAt(-3)).eq(undefined)
+      expect(arr.wrapAt(-4)).eq(undefined)
+    })
+
+    it('should work with overflow index', () => {
+      const arr = new Circularr<number>(4)
+      arr.shift(3)
+      arr.shift(4)
+
+      expect(arr.wrapAt(10)).eq(3)
+      expect(arr.wrapAt(11)).eq(4)
+      expect(arr.wrapAt(12)).eq(undefined)
+      expect(arr.wrapAt(13)).eq(undefined)
+      expect(arr.wrapAt(14)).eq(3)
+    })
+  })
 })

@@ -83,4 +83,16 @@ export default class Circularr <T> {
 
     return Circularr.from(data.slice(beginIndex, endIndex))
   }
+
+  at (index: number): T | undefined {
+    if (index < 0 || index >= this.data.length) {
+      return undefined
+    }
+
+    return this.data[(index + this.index) % this.data.length]
+  }
+
+  wrapAt (index: number): T | undefined {
+    return this.data[(index + this.index) % this.data.length]
+  }
 }
