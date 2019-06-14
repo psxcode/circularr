@@ -1,4 +1,7 @@
 # Circularr
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/psxcode/circularr.svg)](https://greenkeeper.io/)
+
 Fixed size array
 
 ## Install
